@@ -18,16 +18,30 @@ Student *add_student(Student **head, char *name, float grade)
       free(new_student);
       return NULL;
     }
+    
     strcpy(new_student->name, name);
     new_student->grade = grade;
+    
     new_student->next_student = *head;
     *head = new_student;
+
+    return new_student;
 }
 
 // TODO: Implement
 // Display all students in the linked list
 void show_students(Student *head)
 {
+    if(head == NULL){
+        printf("No modes\n");
+        return;
+    }
+    Student *cur *head;
+    while(cur != NULL){
+        printf("Name: %s, Grade: %f\n", current->name, current->grade);
+        cur = cur->next_student;
+    }
+    printf("\n");
 }
 
 // TODO: Implement
@@ -35,6 +49,23 @@ void show_students(Student *head)
 // Return: the removed node
 Student *remove_student(Student **head, char *name)
 {
+    if(*head ==NULL){
+        return NULL;
+    }
+    
+    Student *cur = *head;
+    Student *prev = NULL;
+
+    while(cur != NULL && strcmp(cur_>name, name) != 0){
+        prev = cur;
+        cur = cur->next_student;
+    }
+    
+    if(cur == NULL){
+        return NULL;
+    }
+
+    
 }
 // TODO: Implement
 // Search for a student by name
